@@ -5,14 +5,17 @@ from swearlist import *
 from intro import *
 from server_info import *
 from startup_config import *
+from discord.ext import commands, tasks
 
 intro()
 token_config()
 
 client = discord.Client()
+bot = commands.Bot('!') # ! = PREFIX
 
 print(f'****************** connected ********************\n{client}')
 print('Listening for commands...')
+
 
 @client.event
 async def on_message(inbound):
@@ -42,8 +45,6 @@ async def on_message(inbound):
 
         elif user_inbound_message.lower() == '!ping':
             await inbound.channel.send('Pong')
-            print(f'Lotto used by {username} in channel: {channel}')
-            return
 
 #all channels
     if inbound.content.find("ye ") >= 0:
@@ -107,7 +108,8 @@ async def on_message(inbound):
         await inbound.channel.send(f"Oi {username}: We have detected that you used a banned word in our channel, please refrain from doing that")
         print("Working")
         return
-    
+
+
 client.run(TOKEN)
 
 
