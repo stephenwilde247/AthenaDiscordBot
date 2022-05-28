@@ -14,6 +14,10 @@
    If ever you need to change your token after the first use it will have created a token.txt file
    just replace the token in there with your new token.
    
-   I will release documentation soon!
+   ***Dependencies***
+   Discord - Assuming you have pip installed just enter
+   pip install discord
+   In cmd on Windows or terminal on Mac or Linux
+   
    
   
