@@ -7,7 +7,7 @@ from server_info import *
 from startup_config import *
 
 intro()
-installer()
+token_config()
 
 client = discord.Client()
 
