@@ -14,12 +14,6 @@ client = discord.Client()
 print(f'****************** connected ********************\n{client}')
 print('Listening for commands...')
 
-channelNames = [
-    'welcome',  # used as context channelNames[1] on line 27 :-)
-    '💬︱lobby'  # This will be channelNames[2] when you expend and so on add them as you like
-    # When adding channels a lot of people forget about the "," comma sign please don't do this or it breaks
-]
-
 @client.event
 async def on_message(inbound):
     username_allcase = str(inbound.author).split('#')[0]
