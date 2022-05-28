@@ -23,6 +23,7 @@ async def on_message(inbound):
 
     print(f'{username}: {user_inbound_message}: ({channel})')
 
+# Just in a channel you specify from a list in server_info.py
     if inbound.channel.name == channelNames[0]:  # This is just for lobby as its 1
         if user_inbound_message.lower() == 'cheese':
             print("This was just for the lobby only")
@@ -30,6 +31,7 @@ async def on_message(inbound):
         elif user_inbound_message.lower() == 'pizza':
             print("This was just for the lobby only")
 
+# This does work but commented our for age reasons
         #elif user_inbound_message.lower() == '!lotto':
          #   numbers = f'My guess to the UK lotto numbers this week are:\n{random.randrange(1, 59)} : : {random.randrange(1, 59)} : : {random.randrange(1, 59)} :: {random.randrange(1, 59)} :: {random.randrange(1, 59)} :: Bonus ball: {random.randrange(1, 59)}  \nIf you win please donate to us a little ;-)'
           #  await inbound.channel.send(numbers)
