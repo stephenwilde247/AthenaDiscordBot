@@ -1,4 +1,5 @@
                     😀😀😀 Talk Bot Written in Python by Stephen Wilde 😀😀😀
+                    I call it "Athena" but you can call it what ever you want
                                  Released to you for free!
                        Check out my website: https://stephenwilde.net
    
