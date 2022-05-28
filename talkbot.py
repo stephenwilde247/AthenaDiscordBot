@@ -33,10 +33,8 @@ async def on_message(inbound):
         if user_inbound_message.lower() == 'cheese':
             print("This was just for the lobby only")
 
-
         elif user_inbound_message.lower() == 'pizza':
             print("This was just for the lobby only")
-
 
         #elif user_inbound_message.lower() == '!lotto':
          #   numbers = f'My guess to the UK lotto numbers this week are:\n{random.randrange(1, 59)} : : {random.randrange(1, 59)} : : {random.randrange(1, 59)} :: {random.randrange(1, 59)} :: {random.randrange(1, 59)} :: Bonus ball: {random.randrange(1, 59)}  \nIf you win please donate to us a little ;-)'
@@ -46,20 +44,12 @@ async def on_message(inbound):
 
         # This is the random function code
 
-
-
-
         elif user_inbound_message.lower() == '!ping':
             await inbound.channel.send('Pong')
             print(f'Lotto used by {username} in channel: {channel}')
             return
 
-
-
-        
-
 #all channels
-
     if inbound.content.find("ye ") >= 0:
         await inbound.channel.send(f"Ok, {username} ⬅ This person wants you to know its 'You're'\n"
                                    f"In a sentence 'your' is in the context of your dog pooed on the floor.\n"
