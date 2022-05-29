@@ -17,7 +17,7 @@
    
    ***Dependencies***
    Discord - Assuming you have pip installed just enter
-   pip install discord
+   "pip install discord"
    In cmd on Windows or terminal on Mac or Linux
    
    
