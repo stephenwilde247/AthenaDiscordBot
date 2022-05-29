@@ -7,5 +7,3 @@ website = [
     'Our website is https://mhmatters.life but you can download us on the App & Play store',
     'You take an interest I like that here you go its https://mhmatters.life but we are also on Play and App store'
 ]
-
-

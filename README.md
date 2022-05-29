@@ -12,6 +12,8 @@
    **Disclaimer this is not my channel its the first video i found to post here:**
    https://www.youtube.com/watch?v=aI4OmIbkJH8
    
+
+   I will release documentation soon!
    If ever you need to change your token after the first use it will have created a token.txt file
    just replace the token in there with your new token.
    
@@ -20,5 +22,4 @@
    "pip install discord"
    In cmd on Windows or terminal on Mac or Linux
    
-   
-  
+ 
