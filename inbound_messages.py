@@ -6,7 +6,6 @@ from server_info import *
 from startup_config import *
 from discord.ext import commands, tasks
 
-
 client = discord.Client()
 bot = commands.Bot('!') # ! = PREFIX
 
@@ -107,4 +106,3 @@ def inboundandReplies():
             return
 
     client.run(TOKEN)
-

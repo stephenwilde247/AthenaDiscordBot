@@ -12,5 +12,3 @@
    https://www.youtube.com/watch?v=aI4OmIbkJH8
    
    I will release documentation soon!
-   
-  

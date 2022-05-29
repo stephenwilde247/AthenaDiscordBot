@@ -1,6 +1,4 @@
 import urllib3
-import urllib.request
-import subprocess
 import webbrowser
 
 file = open("VersionNumber.txt")
@@ -20,7 +18,5 @@ def updateVersion():
         if yesno == 'yes':
             webbrowser.open('https://github.com/stephenwilde247/AthenaDiscordBot', new=2)
             print("Please remember to view the readme as updating can remove any code you have added to respond too")
-            exit(0)
-        else:
-            print('You chose no so continuing with outdated software')
+
 
