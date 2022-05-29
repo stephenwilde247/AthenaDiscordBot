@@ -2,6 +2,9 @@ import urllib3
 import urllib.request
 import subprocess
 
+file = open("VersionNumber.txt")
+Version = (file.read())
+file.close()
 
 def updateVersion():
     http = urllib3.PoolManager()
@@ -9,7 +12,7 @@ def updateVersion():
     data = response.data.decode('utf-8')
     print (data)
 
-    if data == '0.0.3\n':
+    if data == Version:
         print("It matches continuing with program....")
         print(data)
     else:
