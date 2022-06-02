@@ -1,4 +1,4 @@
-#When emoji[number] The number you need is line - 4
+#When using emoji[number] The number you need is line - 4
 
 emoji = [
   "🀄️",
