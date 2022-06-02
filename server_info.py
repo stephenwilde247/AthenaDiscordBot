@@ -4,7 +4,4 @@ channelNames = [
     # When adding channels a lot of people forget about the "," comma sign please don't do this or it breaks
 ]
 
-timedChannels = [
-    "welcome",
-    "help"
-]
+TimedChannel = 978854521281319015
