@@ -8,6 +8,7 @@ from discord.ext import commands, tasks
 from emoji_wl import *
 from discord.ext import tasks
 
+
 client = discord.Client()
 bot = commands.Bot('!') # ! = PREFIX
 
@@ -109,15 +110,32 @@ def inboundandReplies():
             print("Working")
             return
 
-        elif user_inbound_message.lower() == '!defcon1':
-            await inbound.channel.purge(limit=100000000000)
-            await inbound.channel.send(f"{username}: Purged the chat! Now it's nice and clean {Discord_Emojis[6]}")
-            print("Working")
-            return
+        elif user_inbound_message.lower() == '!help-athena':  # When someone types !fight
+            await inbound.channel.send(helptxt)  # Replies with the string fightReplies
+            return  # ends this section
+
+##########################ADMIN COMMANDS##########################
+        if user_inbound_message.lower() == '!defcon1':
+            if inbound.author.guild_permissions.administrator:
+                print(f"Username: {username} has purged the chat")
+                await inbound.channel.purge(limit=100000000000)
+                print(f"Username: {username} has purged the chat")
+                await inbound.channel.send(f"{username}: Purged the chat! Now it's nice and clean {Discord_Emojis[0]}")
+                return
+            else:
+                print('Not an admin')
+                await inbound.channel.send(f"{username} You are not an admin")
+                return
 
         elif user_inbound_message.lower() == '!defcon1+clean':
-            await inbound.channel.purge(limit=100000000000)
-            print("Working")
-            return
+            if inbound.author.guild_permissions.administrator:
+                await inbound.channel.purge(limit=100000000000)
+                print(f"Username: {username} has purged the chat clean")
+                return
+
+            else:
+                print('Not an admin')
+                await inbound.channel.send(f"{username} You are not an admin")
+                return
 
     client.run(TOKEN)

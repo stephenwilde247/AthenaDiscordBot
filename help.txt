@@ -1,0 +1,11 @@
+What I can do:
+
+I can purge the entire chat (Admins Only)
+enter: !defcon1
+
+I can also purge the channel to the beginning and have no txt (Admins Only)
+enter: !defcon1+clean
+
+I can reply to Hello and other commands
+
+I am just pretty awesome!
