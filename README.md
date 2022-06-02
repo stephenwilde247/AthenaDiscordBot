@@ -22,4 +22,8 @@
    "pip install discord"
    In cmd on Windows or terminal on Mac or Linux
    
+   To start the script use startBot.py
+   
+   Please be sure to modify to suite you!
+   
  
