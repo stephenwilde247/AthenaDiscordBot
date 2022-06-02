@@ -6,6 +6,7 @@ from server_info import *
 from startup_config import *
 from discord.ext import commands, tasks
 from emoji_wl import *
+from discord.ext import tasks
 
 client = discord.Client()
 bot = commands.Bot('!') # ! = PREFIX
