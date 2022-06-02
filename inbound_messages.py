@@ -11,7 +11,6 @@ from discord.ext import tasks
 client = discord.Client()
 bot = commands.Bot('!') # ! = PREFIX
 
-
 def inboundandReplies():
     print(f'****************** connected ********************\n{client}')
     print('Listening for commands...')
