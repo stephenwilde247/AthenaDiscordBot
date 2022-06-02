@@ -108,13 +108,13 @@ def inboundandReplies():
             print("Working")
             return
 
-        elif user_inbound_message.lower() == '!defcon5':
+        elif user_inbound_message.lower() == '!defcon1':
             await inbound.channel.purge(limit=100000000000)
             await inbound.channel.send(f"{username}: Purged the chat! Now it's nice and clean {Discord_Emojis[6]}")
             print("Working")
             return
 
-        elif user_inbound_message.lower() == '!defcon5+clean':
+        elif user_inbound_message.lower() == '!defcon1+clean':
             await inbound.channel.purge(limit=100000000000)
             print("Working")
             return
