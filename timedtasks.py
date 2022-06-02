@@ -7,7 +7,12 @@ def timed_messages():
         print("Timed messages running")
         start_sending_messages.start()
 
-    @tasks.loop(minutes=15)  # you can even use hours and minutes
+    @tasks.loop(hours=1.00)
     async def start_sending_messages():
-        await client.get_channel(TimedChannel).send("I'm Timed Oh yeah!")
+        await client.get_channel(TimedChannel).send("Check out our website! https://mhmatters.life\nYou can download"
+                                                    " our apps on Apple and Google play just search MHmatters\n\nOur admins"
+                                                    " here are:\n"
+                                                    "WildeSte\n"
+                                                    "Christos103\n"
+                                                    "Emma:grin:")
         print('working')
