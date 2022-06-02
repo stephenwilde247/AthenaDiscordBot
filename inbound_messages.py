@@ -5,6 +5,7 @@ from swearlist import *
 from server_info import *
 from startup_config import *
 from discord.ext import commands, tasks
+from emoji_wl import *
 
 client = discord.Client()
 bot = commands.Bot('!') # ! = PREFIX
@@ -100,8 +101,21 @@ def inboundandReplies():
             return  # ends this section
 
         elif any(word in user_inbound_message.lower() for word in curses):
+            await inbound.channel.purge(limit=1)
             await inbound.channel.send(
-                f"Oi {username}: We have detected that you used a banned word in our channel, please refrain from doing that")
+                f"Oi {username}: We have detected that you used a banned word in our channel,\n"
+                f"please retype your message without swearing or ill keep deleting it :rofl:")
+            print("Working")
+            return
+
+        elif user_inbound_message.lower() == '!defcon5':
+            await inbound.channel.purge(limit=100000000000)
+            await inbound.channel.send(f"{username}: Purged the chat! Now it's nice and clean {Discord_Emojis[6]}")
+            print("Working")
+            return
+
+        elif user_inbound_message.lower() == '!defcon5+clean':
+            await inbound.channel.purge(limit=100000000000)
             print("Working")
             return
 
