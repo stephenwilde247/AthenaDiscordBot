@@ -8,8 +8,8 @@ from welcometoserver import *
 intro()
 updateVersion()
 token_config()
-welcome()
-onJoin_hello()
+#welcome()  #notworking yet
+#onJoin_hello()  #not working yet
 timed_messages()
 inboundandReplies()
 
