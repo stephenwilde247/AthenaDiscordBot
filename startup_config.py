@@ -19,7 +19,7 @@ file = open("token.txt")
 TOKEN = (file.read())
 file.close()
 
-file = open("help.txt")
+file = open("txt_files/help.txt")
 helptxt = (file.read())
 file.close()
 

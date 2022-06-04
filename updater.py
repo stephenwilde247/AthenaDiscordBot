@@ -1,7 +1,7 @@
 import urllib3
 import webbrowser
 
-file = open("VersionNumber.txt")
+file = open("txt_files/VersionNumber.txt")
 Version = (file.read())
 file.close()
 
