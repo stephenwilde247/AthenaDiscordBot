@@ -12,7 +12,10 @@ from discord.ext import tasks
 client = discord.Client()
 bot = commands.Bot('!') # ! = PREFIX
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c31cf7bd20fde46b6c7ed2194f923819561f5b74
 def inboundandReplies():
     print(f'****************** connected ********************\n{client}')
     print('Listening for commands...')
@@ -23,7 +26,10 @@ def inboundandReplies():
         user_inbound_message = inbound.content
         channel = str(inbound.channel.name)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c31cf7bd20fde46b6c7ed2194f923819561f5b74
         print(f'{username}: {user_inbound_message}: ({channel})')
 
         # Just in a channel you specify from a list in server_info.py
@@ -44,6 +50,7 @@ def inboundandReplies():
             # This is the random function code
 
             elif user_inbound_message.lower() == '!ping':
+<<<<<<< HEAD
                 await inbound.channel.send(f'Pong @{username_allcase}')
 
 
@@ -51,6 +58,11 @@ def inboundandReplies():
 
         # all channels
 
+=======
+                await inbound.channel.send(f'Pong + @{username_allcase}')
+
+        # all channels
+>>>>>>> c31cf7bd20fde46b6c7ed2194f923819561f5b74
         if inbound.content.find("ye ") >= 0:
             await inbound.channel.send(f"Ok, {username} ⬅ This person wants you to know its 'You're'\n"
                                        f"In a sentence 'your' is in the context of your dog pooed on the floor.\n"
@@ -58,6 +70,7 @@ def inboundandReplies():
             print(f'Your educate used by {username} in channel: {channel}')
             return
 
+<<<<<<< HEAD
 
         elif inbound.content.startswith("!calc "):
             names = inbound.content.split("!calc ", 1)[1]
@@ -82,6 +95,20 @@ def inboundandReplies():
             print(f'Spotify used by {username} in channel: {channel}')
             return
 
+=======
+        elif user_inbound_message.lower() == '!uksuicide':  # When someone types !fight
+            ukSuicideReply = f'{username} Get help now!, we are all here to listen but if its past our help ' \
+                             f'please please please go here: https://mhmatters.life/viewtopic.php?t=7'
+            await inbound.channel.send(ukSuicideReply)  # Replies with the string fightReplies
+            print(f'!Friend Command used by {username} sent to {channel}')
+            return  # ends this section
+
+        elif user_inbound_message.lower() == '!hug':
+            await inbound.channel.send(f'I Hug @{username_allcase}# everything is going to be ok :)')
+            print(f'Lotto used by {username} in channel: {channel}')
+            return
+
+>>>>>>> c31cf7bd20fde46b6c7ed2194f923819561f5b74
         elif user_inbound_message.lower() == '!channel':  # When someone types !fight
             chan1 = channel.upper()
             nick2 = username.upper()
@@ -117,7 +144,11 @@ def inboundandReplies():
         elif user_inbound_message.lower() == '!website':  # When someone types !fight
             websiteReplies = random.choice(website)  # makes fightReplies a random Choice from "fight" wordlist
             await inbound.channel.send(websiteReplies)  # Replies with the string fightReplies
+<<<<<<< HEAD
             print(f'!Website Command used by {username} sent to {channel}')
+=======
+            print(f'!Fight Command used by {username} sent to {channel}')
+>>>>>>> c31cf7bd20fde46b6c7ed2194f923819561f5b74
             return  # ends this section
 
         elif any(word in user_inbound_message.lower() for word in curses):
@@ -132,6 +163,7 @@ def inboundandReplies():
             await inbound.channel.send(helptxt)  # Replies with the string fightReplies
             return  # ends this section
 
+<<<<<<< HEAD
 #########################Suicide Commands########################
         elif user_inbound_message.lower() == '!uksuicide':  # When someone types !fight
             await inbound.channel.send(f"@{username} Get help now!, we are all here to listen but if its past our help please see below: \n"
@@ -188,6 +220,8 @@ def inboundandReplies():
             print(f'!suicide Command used by {username} sent to {channel}')
             return  # ends this section
 
+=======
+>>>>>>> c31cf7bd20fde46b6c7ed2194f923819561f5b74
 ##########################ADMIN COMMANDS##########################
         if user_inbound_message.lower() == '!defcon1':
             if inbound.author.guild_permissions.administrator:

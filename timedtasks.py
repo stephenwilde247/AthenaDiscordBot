@@ -1,11 +1,15 @@
 from inbound_messages import *
 from server_info import TimedChannel
+<<<<<<< HEAD
 import discord
+=======
+>>>>>>> c31cf7bd20fde46b6c7ed2194f923819561f5b74
 
 file = open("txt_files/timed_txt.txt")
 timed_messages_output = (file.read())
 file.close()
 
+<<<<<<< HEAD
 file = open("txt_files/rules.txt")
 rules = (file.read())
 file.close()
@@ -22,12 +26,15 @@ file = open("txt_files/socials.txt")
 socials = (file.read())
 file.close()
 
+=======
+>>>>>>> c31cf7bd20fde46b6c7ed2194f923819561f5b74
 def timed_messages():
     @client.event
     async def on_ready():
         print("Timed messages running")
         start_sending_messages.start()
 
+<<<<<<< HEAD
     @tasks.loop(hours=24.00)
     async def start_sending_messages():
         #await client.get_channel(TimedChannel).send(file=discord.File('images/logo.png'))
@@ -60,4 +67,10 @@ def timed_messages():
 
 
 
+=======
+    @tasks.loop(hours=1.00)
+    async def start_sending_messages():
+        await client.get_channel(TimedChannel).send(file=discord.File('images/logo.png'))
+        await client.get_channel(TimedChannel).send(timed_messages_output)
+>>>>>>> c31cf7bd20fde46b6c7ed2194f923819561f5b74
         print('working')
