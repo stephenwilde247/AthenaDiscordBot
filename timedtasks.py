@@ -61,10 +61,6 @@ def timed_messages():
         #em.add_image(url='https://mhmatters.life/ext/dmzx/imageupload/img-files/58/4511292/2322038/e128abb9a0ca9923fe606ee3fba0c63c.png')
         await client.get_channel(TimedChannel).send(embed=em)
 
-
-
-
-
     @tasks.loop(hours=24.00)
     async def start_sending_messages():
         await client.get_channel(TimedChannel).send(file=discord.File('images/logo.png'))
