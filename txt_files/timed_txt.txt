@@ -1,4 +1,9 @@
 Check out our website! https://mhmatters.life
+<<<<<<< HEAD
+You can download our apps on:
+Apple: https://apps.apple.com/gb/app/mhmatters/id1591269501
+Google Play: https://play.google.com/store/apps/details?id=com.mainmh.mhmatters&gl=GB
+=======
 You can download our apps on Apple and Google play just search MHmatters
 
 Our admins here are:
@@ -8,3 +13,4 @@ Christos103
 Emma
 Jessrh41641
 [VL]Kenpatchi
+>>>>>>> c31cf7bd20fde46b6c7ed2194f923819561f5b74
