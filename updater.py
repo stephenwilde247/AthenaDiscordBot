@@ -7,7 +7,11 @@ file.close()
 
 def updateVersion():
     http = urllib3.PoolManager()
+<<<<<<< HEAD
+    response = http.request('GET', 'http://wilde247.com/discordBot/version.txt')
+=======
     response = http.request('GET', 'https://wilde247.com/discordBot/version.txt')
+>>>>>>> c31cf7bd20fde46b6c7ed2194f923819561f5b74
     data = response.data.decode('utf-8')
 
     if data == Version:
