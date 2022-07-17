@@ -1,6 +1,6 @@
 from inbound_messages import *
 from server_info import TimedChannel
-
+from itertools import islice
 import discord
 
 
