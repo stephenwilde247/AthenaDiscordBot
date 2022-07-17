@@ -8,10 +8,8 @@ from discord.ext import commands, tasks
 from emoji_wl import *
 from discord.ext import tasks
 
-
 client = discord.Client()
 bot = commands.Bot('!') # ! = PREFIX
-
 
 def inboundandReplies():
     print(f'****************** connected ********************\n{client}')
@@ -22,8 +20,6 @@ def inboundandReplies():
         username = str(inbound.author).split('#')[0]
         user_inbound_message = inbound.content
         channel = str(inbound.channel.name)
-
-
         print(f'{username}: {user_inbound_message}: ({channel})')
 
         # Just in a channel you specify from a list in server_info.py
@@ -46,18 +42,13 @@ def inboundandReplies():
             elif user_inbound_message.lower() == '!ping':
                 await inbound.channel.send(f'Pong @{username_allcase}')
 
-
-
-
         # all channels
-
         if inbound.content.find("ye ") >= 0:
             await inbound.channel.send(f"Ok, {username} ⬅ This person wants you to know its 'You're'\n"
                                        f"In a sentence 'your' is in the context of your dog pooed on the floor.\n"
                                        f"Whilst 'You're' context is: You're awesome.")
             print(f'Your educate used by {username} in channel: {channel}')
             return
-
 
         elif inbound.content.startswith("!calc "):
             names = inbound.content.split("!calc ", 1)[1]
@@ -121,19 +112,19 @@ def inboundandReplies():
             return  # ends this section
 
         elif any(word in user_inbound_message.lower() for word in curses):
-            await inbound.channel.purge(limit=1)
+            #await inbound.channel.purge(limit=1)
             await inbound.channel.send(
                 f"Oi {username}: We have detected that you used a banned word in our channel,\n"
-                f"please retype your message without swearing or ill keep deleting it :rofl:")
+                f"if I am wrong please just ignore this message and be happy I no longer delete the messages :rofl:")
             print("Working")
             return
 
-        elif user_inbound_message.lower() == '!help-athena':  # When someone types !fight
-            await inbound.channel.send(helptxt)  # Replies with the string fightReplies
+        elif user_inbound_message.lower() == '!help-athena':  # When someone types !help
+            await inbound.channel.send(helptxt)  # Help txt file
             return  # ends this section
 
 #########################Suicide Commands########################
-        elif user_inbound_message.lower() == '!uksuicide':  # When someone types !fight
+        elif user_inbound_message.lower() == '!uksuicide':
             await inbound.channel.send(f"@{username} Get help now!, we are all here to listen but if its past our help please see below: \n"
                                             f"Emergancy: 999 and 112\n"
                                             f"NHS mental health line: 111 then option 2\n"
@@ -143,7 +134,7 @@ def inboundandReplies():
             print(f'!uksuicide Command used by {username} sent to {channel}')
             return  # ends this section
 
-        elif user_inbound_message.lower() == '!usasuicide':  # When someone types !fight
+        elif user_inbound_message.lower() == '!usasuicide':
             await inbound.channel.send(f"@{username} Get help now!, we are all here to listen but if its past our help please see below: \n"
                                             f"Emergancy:  911\n"
                                             f"The national suicide prevention line: 1-800-273-8255\n"
@@ -153,7 +144,7 @@ def inboundandReplies():
             print(f'!usasuicide Command used by {username} sent to {channel}')
             return  # ends this section
 
-        elif user_inbound_message.lower() == '!canadasuicide':  # When someone types !fight
+        elif user_inbound_message.lower() == '!canadasuicide':
             await inbound.channel.send(f"@{username} Get help now!, we are all here to listen but if its past our help please see below: \n"
                                             f"Emergancy:  911\n"
                                             f"Canada Suicide Prevention Service: 1-833-456-4566 or Text 45645\n"
@@ -163,7 +154,7 @@ def inboundandReplies():
             print(f'!canadasuicide Command used by {username} sent to {channel}')
             return  # ends this section
 
-        elif user_inbound_message.lower() == '!aussuicide':  # When someone types !fight
+        elif user_inbound_message.lower() == '!aussuicide':
             await inbound.channel.send(f"@{username} Get help now!, we are all here to listen but if its past our help please see below: \n"
                                             f"Emergency:  000\n"
                                             f"Lifeline: 13 11 14\n"
@@ -173,7 +164,7 @@ def inboundandReplies():
             print(f'!canadasuicide Command used by {username} sent to {channel}')
             return  # ends this section
 
-        elif user_inbound_message.lower() == '!nzsuicide':  # When someone types !fight
+        elif user_inbound_message.lower() == '!nzsuicide':
             await inbound.channel.send(f"@{username} Get help now!, we are all here to listen but if its past our help please see below; \n"
                                             f"Emergancy:  111\n"
                                             f"(T1737: Call or Text 1737\n"
@@ -210,6 +201,101 @@ def inboundandReplies():
             else:
                 print('Not an admin')
                 await inbound.channel.send(f"{username} You are not an admin")
+                return
+
+####bot-amnesia####
+        watch = 998258908600737793
+        if inbound.channel.name == channelNames[2]:
+            if user_inbound_message.lower() == 'helpme':
+
+                await client.get_channel(watch).send(f'{username} has used the helpme suicide commands\n'
+                                                     f'We are awaiting to see what country the user is from\n'
+                                                     f'Please ensure we watch this user as much as we can.')
+                print("This was just for the bot forgeting only")
+                await inbound.channel.purge(limit=1)
+                await inbound.channel.send(f"Where are you from, UK, USA, CANADA, AUS, NZ or Other?")
+                return
+
+            if user_inbound_message.lower() == 'uk':
+                await inbound.channel.purge(limit=2)
+                await client.get_channel(watch).send(f'{username} has told me their location is UK 🇬🇧')
+                await inbound.channel.send(
+                    f"We are all here to listen but if its past our help please see below: \n"
+                    f"Emergancy: 999 and 112\n"
+                    f"NHS mental health line: 111 then option 2\n"
+                    f"Shout – Text SHOUT to 85258\n"
+                    f"Samaritans: 116 123\n"
+                    f"More info here: https://mhmatters.life/viewtopic.php?t=7\n\n"
+                    f"Type 'done' without the quotes to forget this ever happened")
+                print(f'!uksuicide Command used by {username} sent to {channel}')
+                return
+
+            if user_inbound_message.lower() == 'usa':
+                await client.get_channel(watch).send(f'{username} has told me their location is USA 🇺🇸')
+                await inbound.channel.purge(limit=2)
+                await inbound.channel.send(f"Get help now!, we are all here to listen but if its past our help please see below: \n"
+                                            f"Emergancy:  911\n"
+                                            f"The national suicide prevention line: 1-800-273-8255\n"
+                                            f"Veterens Crisis Line: 1-800-273-8255\n"
+                                            f"Crisis Text Line: Text HOME to 741-741\n"
+                                            f"More info here: https://mhmatters.life/viewtopic.php?t=8"
+                                            f"Type 'done' without the quotes to forget this ever happened")
+                print(f'!uksuicide Command used by {username} sent to {channel}')
+                return
+
+            if user_inbound_message.lower() == 'canada':
+                await client.get_channel(watch).send(f'{username} has told me their location is CANADA 🇨🇦')
+                await inbound.channel.purge(limit=2)
+                await inbound.channel.send(
+                    f"Get help now!, we are all here to listen but if its past our help please see below: \n"
+                                        f"Emergancy:  911\n"
+                                        f"Canada Suicide Prevention Service: 1-833-456-4566 or Text 45645\n"
+                                        f"(Text only avaliable from 4pm until Midnight)\n\n"
+                                        f"Trans Life Line: 1-877-330-6366\n\n"
+                                        f"More info here: https://mhmatters.life/viewtopic.php?t=9\n\n"
+                    f"Type 'done' without the quotes to forget this ever happened")
+                print(f'!uksuicide Command used by {username} sent to {channel}')
+                return
+
+            if user_inbound_message.lower() == 'aus':
+                await client.get_channel(watch).send(f'{username} has told me their location is AUSTRALIA 🇦🇺')
+                await inbound.channel.purge(limit=2)
+                await inbound.channel.send(
+                    f"Get help now!, we are all here to listen but if its past our help please see below: \n"
+                                            f"Emergency:  000\n"
+                                            f"Lifeline: 13 11 14\n"
+                                            f"Suicide call back service: 1300 659 467\n"
+                                            f"Talk Suicide: 1800 008 255\n"
+                                            f"More info here: https://mhmatters.life/viewtopic.php?t=10\n\n"
+                    f"Type 'done' without the quotes to forget this ever happened")
+                print(f'!uksuicide Command used by {username} sent to {channel}')
+                return
+
+            if user_inbound_message.lower() == 'nz':
+                await client.get_channel(watch).send(f'{username} has told me their location is New Zealand 🇳🇿')
+                await inbound.channel.purge(limit=2)
+                await inbound.channel.send(
+                    f"Get help now!, we are all here to listen but if its past our help please see below: \n"
+                                            f"Emergancy:  111\n"
+                                            f"(T1737: Call or Text 1737\n"
+                                            f"The LockDown: Text 5626\n"
+                                            f"More info here: https://mhmatters.life/viewtopic.php?t=11\n\n"
+                    f"Type 'done' without the quotes to forget this ever happened")
+                print(f'!uksuicide Command used by {username} sent to {channel}')
+                return
+
+            if user_inbound_message.lower() == 'other':
+                await client.get_channel(watch).send(f'{username} has told me their location is Other (Not Known by us) ❓')
+                await inbound.channel.purge(limit=2)
+                await inbound.channel.send("Get help now!, we are all here to listen but if its past our help please see below: \n"
+                        f"https://mhmatters.life/viewforum.php?f=9")
+
+                print(f'!uksuicide Command used by {username} sent to {channel}')
+                return
+
+            if user_inbound_message.lower() == 'done':
+                await inbound.channel.purge(limit=1000000)
+
                 return
 
     client.run(TOKEN)
