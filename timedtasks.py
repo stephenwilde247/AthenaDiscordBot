@@ -1,8 +1,6 @@
 from inbound_messages import *
 from server_info import TimedChannel
-
 import discord
-
 
 file = open("txt_files/timed_txt.txt")
 timed_messages_output = (file.read())
@@ -23,7 +21,6 @@ file.close()
 file = open("txt_files/socials.txt")
 socials = (file.read())
 file.close()
-
 
 def timed_messages():
     @client.event
@@ -59,15 +56,7 @@ def timed_messages():
         #em.set_image(url="attachment://filename.png")
 
         #em.add_image(url='https://mhmatters.life/ext/dmzx/imageupload/img-files/58/4511292/2322038/e128abb9a0ca9923fe606ee3fba0c63c.png')
+        print('Sending 24 hour card')
         await client.get_channel(TimedChannel).send(embed=em)
-
-
-
-
-
-    @tasks.loop(hours=24.00)
-    async def start_sending_messages():
-        await client.get_channel(TimedChannel).send(file=discord.File('images/logo.png'))
-        await client.get_channel(TimedChannel).send(timed_messages_output)
 
         print('working')
