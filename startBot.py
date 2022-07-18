@@ -6,6 +6,8 @@ from timedtasks import *
 from welcometoserver import *
 
 
+
+
 intro()
 updateVersion()
 token_config()
@@ -13,4 +15,7 @@ token_config()
 #onJoin_hello()  #not working yet
 timed_messages()
 inboundandReplies()
+
+
+
 
