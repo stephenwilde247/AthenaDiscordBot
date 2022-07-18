@@ -30,15 +30,6 @@ def inboundandReplies():
             elif user_inbound_message.lower() == 'pizza':
                 print("This was just for the lobby only")
 
-            # This does work but commented our for age reasons
-            # elif user_inbound_message.lower() == '!lotto':
-            #   numbers = f'My guess to the UK lotto numbers this week are:\n{random.randrange(1, 59)} : : {random.randrange(1, 59)} : : {random.randrange(1, 59)} :: {random.randrange(1, 59)} :: {random.randrange(1, 59)} :: Bonus ball: {random.randrange(1, 59)}  \nIf you win please donate to us a little ;-)'
-            #  await inbound.channel.send(numbers)
-            # print(f'Lotto used by {username} in channel: {channel}')
-            # return
-
-            # This is the random function code
-
             elif user_inbound_message.lower() == '!ping':
                 await inbound.channel.send(f'Pong @{username_allcase}')
 
@@ -59,6 +50,8 @@ def inboundandReplies():
             r = str(c)
             em = discord.Embed(title=f"Calculator", description=f"Input\n```{a}*{b}```\n\nOutput\n```{r}```")
             await inbound.channel.send(embed=em)
+            print("Calc Used")
+            return
 
         elif user_inbound_message.lower() == '!hug':
             embed = discord.Embed(title=f"🤗I hug @{username}🤗", description=" Hopefully this makes you feel better!")  # ,color=Hex code
@@ -82,7 +75,7 @@ def inboundandReplies():
             print(f'!Fight Command used by {username} sent to {channel}')
             return  # ends this section
 
-        elif user_inbound_message.lower() == 'hello':  # somone says hello in chat
+        elif user_inbound_message.lower() == 'hello':  # someone says hello in chat
             await inbound.channel.send(
                 f"Hello how are you {username}")  # replies back with Hello how are you in  a formatted string with username
             return  # Ends this statement
@@ -92,24 +85,24 @@ def inboundandReplies():
             print(f'Said bye to {username} in channel: {channel}')
             return
 
-        elif user_inbound_message.lower() == '!friends':  # When someone types !fight
+        elif user_inbound_message.lower() == '!friends':
             friendReplies = f'Right {username} Our main friends are: Energize join thier discord too' \
-                            f' - https://discord.gg/5GZnbvgk2K'  # makes fightReplies a random Choice from "fight" wordlist
-            await inbound.channel.send(friendReplies)  # Replies with the string fightReplies
+                            f' - https://discord.gg/5GZnbvgk2K'
+            await inbound.channel.send(friendReplies)
             print(f'!Friend Command used by {username} sent to {channel}')
-            return  # ends this section
+            return
 
-        elif user_inbound_message.lower() == '!fight':  # When someone types !fight
-            fightReplies = random.choice(fight)  # makes fightReplies a random Choice from "fight" wordlist
-            await inbound.channel.send(fightReplies)  # Replies with the string fightReplies
+        elif user_inbound_message.lower() == '!fight':
+            fightReplies = random.choice(fight)
+            await inbound.channel.send(fightReplies)
             print(f'!Fight Command used by {username} sent to {channel}')
-            return  # ends this section
+            return
 
-        elif user_inbound_message.lower() == '!website':  # When someone types !fight
-            websiteReplies = random.choice(website)  # makes fightReplies a random Choice from "fight" wordlist
-            await inbound.channel.send(websiteReplies)  # Replies with the string fightReplies
+        elif user_inbound_message.lower() == '!website':
+            websiteReplies = random.choice(website)
+            await inbound.channel.send(websiteReplies)
             print(f'!Website Command used by {username} sent to {channel}')
-            return  # ends this section
+            return
 
         elif any(word in user_inbound_message.lower() for word in curses):
             #await inbound.channel.purge(limit=1)

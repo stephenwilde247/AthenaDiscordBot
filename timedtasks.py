@@ -34,8 +34,8 @@ def timed_messages():
 
     @tasks.loop(hours=24.00)
     async def start_sending_messages():
-        #await client.get_channel(TimedChannel).send(file=discord.File('images/logo.png'))
-        #await client.get_channel(TimedChannel).send(timed_messages_output)
+        #await adminin.get_channel(TimedChannel).send(file=discord.File('images/logo.png'))
+        #await adminin.get_channel(TimedChannel).send(timed_messages_output)
 
         logo = discord.File("images/logo.png")
 

@@ -2,7 +2,7 @@ from pathlib import Path
 
 def token_config():
 
-    path_to_file = 'token.txt'
+    path_to_file = 'txt_files/token.txt'
     path = Path(path_to_file)
     print("************ Checking for Token File ************")
     if path.is_file():
@@ -15,7 +15,7 @@ def token_config():
             f.write(token_in)
 
 token_config()
-file = open("token.txt")
+file = open("txt_files/token.txt")
 TOKEN = (file.read())
 file.close()
 
